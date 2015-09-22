@@ -17,7 +17,7 @@ for K=0:n-1
         y = zeros(m,runNumber);
         xhat = zeros(n,runNumber);
         label = zeros(runNumber,1);
-        for run = 1:runNumber
+        parfor run = 1:runNumber
             %fprintf('Running %d\n', run);
             y(:,run) = A(:,:,run)*x_star;
             xhat(:,run) = constrainedTV(A(:,:,run), y(:,run));
